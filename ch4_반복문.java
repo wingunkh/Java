@@ -1,23 +1,18 @@
-//do-while문은 while문의 변형으로 조건식의 결과에 관계없이 최소한 한번은 수행될 것을 보장한다.
+//JDK1.5부터 배열과 컬렉션에 저장된 요소에 접근할 때 기존보다 편리한 방법으로 처리할 수 있도록 for문의 새로운 문법이 추가되었다.
 
-//숫자 중에 3의 배수가 포함되어 있으면 포함된 개수만큼 박수를 치는 369게임 프로그램
 public class ch4_반복문 {
 	public static void main(String[] args) {
-		for(int i=1;i<=100;i++) {
-			System.out.printf("i=%d ",i);
-			
-			int tmp=i;
-			
-			do {
-				if(tmp%10%3==0 && tmp%10!=0) //tmp%10이 3의 배수인지 확인하는 조건문(0 제외)
-					System.out.printf("짝!");
-				
-			}while((tmp/=10)!=0);
-			//ex) tmp=99일 때, if문을 만족하여 박수 한번.
-			//조건식이 참이며 tmp는 9가 되어 반복문 재수행.
-			//if문을 만족하여 박수 한번 더. 그러므로 tmp=99일 때 박수 두번.
-			
-			System.out.println();
+		int[] arr= {1,2,3,4,5};
+		int sum=0;
+		
+		for(int tmp : arr) { //타입 변수명 : 배열 또는 컬렉션
+			//위의 문장에서 타입은 배열 또는 컬렉션의 요소의 타입이여야 한다.
+			//배열 또는 컬렉션에 저장된 값이 매 반복마다 하나씩 순서대로 읽혀서 변수에 저장된다.
+			System.out.println(tmp);
+			sum+=tmp;
 		}
-	}
+		
+		System.out.println();
+		System.out.println("sum="+sum);
+	}		
 }
