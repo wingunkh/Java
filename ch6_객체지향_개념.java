@@ -49,5 +49,18 @@ public class ch6_객체지향_개념 {
 		
 		System.out.println("현재 t1의 채널은 "+t1.channel+" 입니다."); //"현재 t1채널은 5입니다." 출력
 		System.out.println("현재 t2의 채널은 "+t2.channel+" 입니다."); //"현재 t2채널은 5입니다." 출력
+		
+		Tv[] tvArr = new Tv[3]; //객체 배열은 내부에 객체가 저장되는 것이 아니라, 객체의 주소가 저장된다.
+		//사실 객체 배열은 참조변수들을 하나로 묶은 참조변수 배열인 것이다.
+		
+		for(int i=0;i<tvArr.length;i++) {
+			tvArr[i]=new Tv();
+			tvArr[i].channel=i+10;
+		}
+		
+		for(int i=0;i<tvArr.length;i++) {
+			tvArr[i].channelUp();
+			System.out.printf("tvArr[%d].channel=%d\n",i,tvArr[i].channel);
+		} //"tvArr[0].channel=11 (enter) tvArr[1].channel=12 (enter) tvArr[2].channel=13" 출력
 	}
 }
