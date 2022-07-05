@@ -11,7 +11,7 @@ public class ch6_객체지향_참조형반환타입 {
 		System.out.println("d2.x="+d2.x);
 	}
 	
-	static Data copy(Data d) { //반환하는 겂이 Data객체의 주소이므로 반환타입이 Data이다. 
+	static Data copy(Data d) { //반환하는 값이 Data객체의 주소이므로 반환타입이 Data이다. 
 		Data tmp=new Data(); //새로운 객체 tmp생성
 		tmp.x=d.x; //d.x의 값을 tmp.x에 복사
 		
