@@ -1,0 +1,38 @@
+/*
+	생성자에서 다른 생성자를 호출하기 위한 조건
+	1) 생성자의 이름으로 클래스의 이름 대신 this를 사용한다.
+	2) 한 생성자에서 다른 생성자를 호춣 할 때는 반드시 첫 줄에서만 호출이 가능하다.
+*/
+
+class Car{
+	String color; //색상
+	String gearType; //변속기의 종류 - auto(자동), manual(수동)
+	int door; //문의 개수
+	
+	Car(){
+		this("white","auto",4); //Car()생성자에서 Car(String color,String gearType,int door) 생성자 호출
+	}
+	
+	Car(String color){
+		this(color,"auto",4); //Car(String color)생성자에서 Car(String color,String gearType,int door) 생성자 호출
+	}
+	
+	Car(String color,String gearType,int door){
+		//인스턴스 변수와 생성자의 매개변수의 이름이 같아서 구별이 안될 때, 인스턴스변수 앞에 'this'를 사용한다.
+		//'this'는 참조변수로 인스턴스 자신을 가리킨다. 인스턴스의 주소가 저장되어 있으며 모든 인스턴스 메서드에 지역변수로 숨겨진 채로 존재한다.
+		//인스턴스 메서드만이 'this'를 사용할 수 있다. (클래스 메서드는 당연히 사용 불가)
+		this.color=color;
+		this.gearType=gearType;
+		this.door=door;
+	}
+}
+
+public class ch6_객체지향12_this {
+	public static void main(String[] args) {
+		Car c1=new Car();
+		Car c2=new Car("blue");
+		
+		System.out.println("c1의 색상=" + c1.color + ", 변속기=" + c1.gearType + ", 문의 개수=" + c1.door);
+		System.out.println("c2의 색상=" + c2.color + ", 변속기=" + c2.gearType + ", 문의 개수=" + c2.door);
+	}
+}
