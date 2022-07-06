@@ -13,6 +13,10 @@ class Car{
 		this("white","auto",4); //Car()생성자에서 Car(String color,String gearType,int door) 생성자 호출
 	}
 	
+	Car(Car c){ //현재 사용하고 있는 인스턴스와 같은 상태를 갖는 인스턴스를 하나 더 만들고자 할 때 생성자를 이용할 수 있다.
+		this(c.color,c.gearType,c.door);
+	}
+	
 	Car(String color){
 		this(color,"auto",4); //Car(String color)생성자에서 Car(String color,String gearType,int door) 생성자 호출
 	}
@@ -30,9 +34,19 @@ class Car{
 public class ch6_객체지향12_this {
 	public static void main(String[] args) {
 		Car c1=new Car();
-		Car c2=new Car("blue");
+		Car c2=new Car(c1);
 		
 		System.out.println("c1의 색상=" + c1.color + ", 변속기=" + c1.gearType + ", 문의 개수=" + c1.door);
+		//c1의 색상=white, 변속기=auto, 문의 개수=4
 		System.out.println("c2의 색상=" + c2.color + ", 변속기=" + c2.gearType + ", 문의 개수=" + c2.door);
+		//c2의 색상=white, 변속기=auto, 문의 개수=4
+		
+		c1.door=100;
+		
+		System.out.println("c1의 색상=" + c1.color + ", 변속기=" + c1.gearType + ", 문의 개수=" + c1.door);
+		//c1의 색상=white, 변속기=auto, 문의 개수=100
+		System.out.println("c2의 색상=" + c2.color + ", 변속기=" + c2.gearType + ", 문의 개수=" + c2.door);
+		//c2의 색상=white, 변속기=auto, 문의 개수=4
+		//인스턴스 c2는 c1을 복사하여 생성된 인스턴스지만, 서로 독립적으로 메모리공간에 존재하는 별도의 인스턴스이므로 c1의 값이 변경되어도 c2의 값이 영향을 받지 않는다.
 	}
 }
