@@ -3,7 +3,6 @@
 import java.util.Arrays; 
 
 public class ch5_배열_String배열 {
-
 	public static void main(String[] args) {
 		String[] arr=new String[3]; //3개의 String 타입의 참조변수를 저장하기 위한 공간 마련, 이 때 참조형 변수의 기본값은 null이므로 각 요소의 값은 null로 초기화된다.
 		arr[0]=new String("JA"); //기본적인 초기화
