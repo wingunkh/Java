@@ -14,6 +14,6 @@ public class ch5_배열_c_String배열 {
 		
 		for(String i : name) {
 			System.out.println(i);
-		}// Kim (enter) Hyun (enter) Geun 출력
+		} // Kim (enter) Hyun (enter) Geun 출력
 	}
 }
