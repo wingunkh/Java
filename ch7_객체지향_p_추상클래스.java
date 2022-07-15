@@ -29,7 +29,6 @@ abstract class Unit{
 
 class Marine extends Unit{
 	void move(int x, int y) {/* 지정된 위치로 이동 */} //추상메서드를 오버라이딩 하지 않을 시 에러 발생.
-	
 	void stimPack() {}
 }
 
