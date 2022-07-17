@@ -30,6 +30,7 @@ public class ch7_객체지향_r_인터페이스다형성 {
 	public static void main(String[] args) {
 		Parseable p=ParserManager.getParser("XML");
 		p.parse("김현근.xml"); //"김현근.xml- XML 구분분석 완료." 출력.
+		//parse()함수는 Parseable인터페이스의 메서드이므로 접근 가능.
 		p=ParserManager.getParser("HTML");
 		p.parse("김깜이.html"); //"김깜이.html- HTML 구분분석 완료." 출력.
 	}
