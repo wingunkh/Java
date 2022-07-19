@@ -17,31 +17,39 @@
 	- 익명 클래스: 클래스의 선언과 객체의 생성을 동시에 하는 이름없는 클래스(일회용)
 */
 
-class ch7_객체지향_v_내부클래스 {
-	private int outerx=100;
+class Outer {
+	private int px=100;
+	int y=100;
 	class InstanceInner{ //인스턴스 클래스
-		int x=outerx; //외부 클래스의 private멤버에도 접근이 가능하다.
-		static int y=100;
+		int x=px; //외부 클래스의 private멤버에도 접근이 가능하다.
+		int y=Outer.this.y; //내부 클래스외 외부 클래스에 선언된 변수의 이름이 같을 때는 변수 앞에 'this' 또는 '외부클래스명.this'를 붙혀서 구분한다.
 	}
 	
 	static class StaticInner{ //스태틱 클래스
 		int x=200; //스태틱 클래스는 외부 클래스의 인스턴스멤버에 접근할 수 없다.
-		static int y=200;
+		static int y=200; //내부 클래스 중 스태틱 클래스만 static 멤버를 가질 수 있다.
 	}
 	
 	void method() {
 		final int Localy=300;
 		class LocalInner{ //지역 클래스
-			int x=outerx; // 외부 클래스의 private멤버에도 접근이 가능하다.
-			static int y=Localy; //지역 클래스가 포함된 메서드에 정의된 지역변수도 사용할 수 있다. 단, final이 붙은 지역변수만 접근 가능하다.
+			int x=px; // 외부 클래스의 private멤버에도 접근이 가능하다.
+			int y=Localy; //지역 클래스가 포함된 메서드에 정의된 지역변수도 사용할 수 있다. 단, final이 붙은 지역변수만 접근 가능하다.
 		}
 	}
 	
-	public static void main(String[] args) {
-		ch7_객체지향_v_내부클래스 outer = new ch7_객체지향_v_내부클래스();
+	void print() {
+		Outer outer = new Outer();
 		InstanceInner i = outer.new InstanceInner();
 		//인스턴스 클래스의 인스턴스를 생성하려면 외부 클래스의 인스턴스를 먼저 생성해야 한다.
 		System.out.println(i.x); //100
 		System.out.println(StaticInner.y); //200
+	}
+}
+
+public class ch7_객체지향_v_내부클래스{
+	public static void main(String[] args) {
+		Outer o = new Outer();
+		o.print();
 	}
 }
