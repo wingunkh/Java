@@ -48,6 +48,6 @@ public class ch3_연산자 {
 		System.out.println(result);
 		
 		String str2=new String("abc");
-		System.out.println(str2=="abc"); //내용이 같아도 서로 다른 객체기 때문에 '=='로 비교하면 false를 반환한다.
+		System.out.println(str2=="abc"); //내용이 같아도 서로 다른 객체이기 때문에 '=='로 비교하면 false를 반환한다.
 	}
 }
