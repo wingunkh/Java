@@ -23,7 +23,7 @@ public class ch3_연산자 {
 	public static void main(String[] args) {
 		byte a=10;
 		byte b=20;
-		//byte c=a+b; 
+		//byte c=a+b;
 		//에러 발생. byte는 int보다 작은 자료형이기 때문에 연산자 '+'는 이 두 피연산자들의 자료형을 int형으로 자동 형변환 시킨 다음 연산을 수행한다.
 		
 		char c='a'+1;
