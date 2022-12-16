@@ -1,5 +1,6 @@
 //문자열이란 문자를 연이어 늘어놓은 것을 의미하므로 문자열이 곧 char배열이다.
-//그러나 자바에서는 char배열이 아니라 String클래스를 이용해서 문자열을 처리하는 이유는 String클래스가 char배열에 여러가지 기능을 추가하여 확장한 것이기 때문이다.
+//그러나 자바에서는 char배열이 아니라 String클래스를 이용해서 문자열을 처리한다.
+//이유는 String클래스가 char배열에 여러가지 기능을 추가하여 확장한 것이기 때문이다.
 
 public class ch5_배열_d_String클래스 {
 	public static void main(String[] args) {
