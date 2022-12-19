@@ -21,7 +21,7 @@ public class ch6_객체지향_b_변수의종류 {
 	public static void main(String[] args) {
 		System.out.println("Card.width = " + Card.width);
 		System.out.println("Card.height = " + Card.height);
-		//클래스변수는 객체생성 없이 직접 사용 가능하다.
+		//클래스변수는 객체 생성 없이 직접 사용 가능하다.
 		
 		Card c1=new Card();
 		c1.kind="Heart";
